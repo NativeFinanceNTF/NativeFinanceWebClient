@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { Router, Redirect, Route, Switch } from 'react-router-dom'
+import { Router, Redirect, Route, Switch, HashRouter } from 'react-router-dom'
 import { ResetCSS } from 'ntfuikit2'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
@@ -72,7 +72,7 @@ const App: React.FC = () => {
   useUserAgent()
 
   return (
-    <Router history={history}>
+    <HashRouter>
       <ResetCSS />
       <GlobalStyle />
       <GlobalCheckClaimStatus excludeLocations={[]} />
@@ -183,7 +183,7 @@ const App: React.FC = () => {
       <EasterEgg iterations={2} />
       <ToastListener />
       <DatePickerPortal />
-    </Router>
+    </HashRouter>
   )
 }
 
