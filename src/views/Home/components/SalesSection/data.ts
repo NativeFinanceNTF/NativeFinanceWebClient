@@ -34,7 +34,7 @@ export const earnSectionData: SalesSectionProps = {
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.nativefinance.io/products/native-farming',
+    to: 'https://docs.nativefinance.io/#earn',
     text: 'Learn',
     external: true,
   },
