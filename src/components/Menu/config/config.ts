@@ -85,10 +85,10 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       //   label: t('IFO'),
       //   href: '/ifo',
       // },
-      {
-        label: t('Voting'),
-        href: '/voting',
-      },
+      // {
+      //   label: t('Voting'),
+      //   href: '/voting',
+      // },
       {
         type: DropdownMenuItemType.DIVIDER,
       },
