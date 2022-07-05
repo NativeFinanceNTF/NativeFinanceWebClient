@@ -64,6 +64,7 @@ export default function useBUSDPrice(currency?: Currency): Price | undefined {
       busdPair.reserveOf(BUSD_MAINNET).greaterThan(ethPairETHBUSDValue)
     ) {
       const price = busdPair.priceOf(wrapped)
+
       return new Price(currency, BUSD_MAINNET, price.denominator, price.numerator)
     }
     if (ethPairState === PairState.EXISTS && ethPair && busdEthPairState === PairState.EXISTS && busdEthPair) {

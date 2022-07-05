@@ -7,9 +7,11 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceAmount } from 'utils/formatBalance'
 import { farmsConfig } from 'config/constants'
 import useRefresh from 'hooks/useRefresh'
+import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
 import { deserializeToken } from 'state/user/hooks/helpers'
 import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, nonArchivedFarms } from '.'
 import { State, SerializedFarm, DeserializedFarmUserData, DeserializedFarm, DeserializedFarmsState } from '../types'
+
 
 const deserializeFarmUserData = (farm: SerializedFarm): DeserializedFarmUserData => {
   return {
@@ -142,16 +144,37 @@ export const useLpTokenPrice = (symbol: string) => {
   return lpTokenPrice
 }
 
-// /!\ Deprecated , use the BUSD hook in /hooks
-
 export const usePriceCakeBusd = (): BigNumber => {
-  const cakeBnbFarm = useFarmFromPid(5)
 
-  const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
+  const cakePriceUsd = useCakeBusdPrice()
+  // const cakePriceUsdDisplay = cakePriceUsd ? parseFloat(cakePriceUsd.toFixed(9)) * (10 ** 18) : '...'
+  const cakePriceUsdDisplay = cakePriceUsd ? parseFloat(cakePriceUsd.toFixed(9)) : '...'
+
+  console.log('Price fixed')
+  console.log(cakePriceUsdDisplay)
 
   const cakePriceBusd = useMemo(() => {
-    return new BigNumber(cakePriceBusdAsString)
-  }, [cakePriceBusdAsString])
+    return new BigNumber(cakePriceUsdDisplay)
+  }, [cakePriceUsdDisplay])
 
   return cakePriceBusd
 }
+
+
+// export const usePriceCakeBusd = (): BigNumber => {
+//   const cakeBnbFarm = useFarmFromPid(5)
+
+//   const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
+
+//   // const cakePriceUsd = useCakeBusdPrice()
+//   // const cakePriceUsdDisplay = cakePriceUsd ? `$${cakePriceUsd.toFixed(7)}` : '...'
+
+//   console.log('Price fixed')
+//   console.log(cakePriceBusdAsString)
+
+//   const cakePriceBusd = useMemo(() => {
+//     return new BigNumber(cakePriceBusdAsString)
+//   }, [cakePriceBusdAsString])
+
+//   return cakePriceBusd
+// }
