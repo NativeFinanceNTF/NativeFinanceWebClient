@@ -15400,10 +15400,10 @@ ntfsdk@^2.4.0:
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-ntfuikit2@^0.78.0:
-  version "0.78.0"
-  resolved "https://registry.yarnpkg.com/ntfuikit2/-/ntfuikit2-0.78.0.tgz#aebac1f643b2e56b9eec9425b034a9cce3fbd174"
-  integrity sha512-ecEXY7QX7oMnYXUhgm3BWpu/vJQop8wQH0mkDJR+2rx2UOoH10YFNkrR0RXLCKEbxEHV0ZV303uYBHA3oioThg==
+ntfuikit2@^0.88.0:
+  version "0.88.0"
+  resolved "https://registry.yarnpkg.com/ntfuikit2/-/ntfuikit2-0.88.0.tgz#ace1a112d00269d26b4d13aa768903cff2b05a4a"
+  integrity sha512-WIjFaWOUBydHw38eesvW4tVvO1s5HtVB7jft77NQPzzjJfZtaCqjdMJ0ZZsZpZaZyP8PI1cU/JdeqMbJogu5ww==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
