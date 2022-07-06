@@ -10,7 +10,7 @@ const pools: SerializedPoolConfig[] = [
     earningToken: serializedTokens.cake,
     contractAddress: {
       97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
-      56: '0xd30C1484652a32C98855655D21532EF16d1Ac204',
+      56: '0xa2d4c3C62DffAD61d50e85E68F9D77778212C8E3',
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
@@ -21,3 +21,15 @@ const pools: SerializedPoolConfig[] = [
 ]
 
 export default pools
+
+
+// interface PoolConfigBaseProps {
+//   sousId: number
+//   contractAddress: Address
+//   poolCategory: PoolCategory
+//   tokenPerBlock: string
+//   sortOrder?: number
+//   harvest?: boolean
+//   isFinished?: boolean
+//   enableEmergencyWithdraw?: boolean
+// }
