@@ -150,9 +150,6 @@ export const usePriceCakeBusd = (): BigNumber => {
   // const cakePriceUsdDisplay = cakePriceUsd ? parseFloat(cakePriceUsd.toFixed(9)) * (10 ** 18) : '...'
   const cakePriceUsdDisplay = cakePriceUsd ? parseFloat(cakePriceUsd.toFixed(9)) : '...'
 
-  console.log('Price fixed')
-  console.log(cakePriceUsdDisplay)
-
   const cakePriceBusd = useMemo(() => {
     return new BigNumber(cakePriceUsdDisplay)
   }, [cakePriceUsdDisplay])
