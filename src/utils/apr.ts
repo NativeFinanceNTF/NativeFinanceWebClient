@@ -19,7 +19,7 @@ export const getPoolApr = (
   const totalRewardPricePerYear = new BigNumber(rewardTokenPrice).times(tokenPerBlock).times(BLOCKS_PER_YEAR)
   const totalStakingTokenInPool = new BigNumber(stakingTokenPrice).times(totalStaked)
   const apr = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
-  return apr.isNaN() || !apr.isFinite() ? null : apr.toNumber()
+  return apr.isNaN() || !apr.isFinite() ? null : apr.toNumber() * 3
 }
 
 /**
@@ -43,7 +43,7 @@ export const getFarmApr = (
     cakeRewardsAprAsNumber = cakeRewardsApr.toNumber()
   }
   const lpRewardsApr = lpAprs[farmAddress?.toLocaleLowerCase()] ?? 0
-  return { cakeRewardsApr: cakeRewardsAprAsNumber, lpRewardsApr }
+  return { cakeRewardsApr: cakeRewardsAprAsNumber * 3, lpRewardsApr }
 }
 
 export default null
